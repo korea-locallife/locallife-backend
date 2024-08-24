@@ -25,12 +25,28 @@ public class Job {
     private String description;
 
     @Column(nullable = false)
+    private String local;
+
+    @Column(nullable = false)
     private String count;
 
+    @Column
+    private String imageUrl;
+
+    @Column(nullable = false)
+    private String title;
+
+    @Column(nullable = false)
+    private String writer;
+
+    @Column(nullable = false)
+    private String scheduleImageUrl;
+
     @Builder
-    private Job(final String name, final String description, final String count) {
+    private Job(final String name, final String description, final String local, final String count) {
         this.name = name;
         this.description = description;
+        this.local = local;
         this.count = count;
     }
 }

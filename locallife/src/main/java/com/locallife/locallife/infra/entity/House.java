@@ -15,4 +15,7 @@ public class House {
 
     @Column(nullable = false)
     private Long average;
+
+    @Column(nullable = false)
+    private String local;
 }

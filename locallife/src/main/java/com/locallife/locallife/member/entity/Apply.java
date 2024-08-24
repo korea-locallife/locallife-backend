@@ -30,6 +30,12 @@ public class Apply {
     @Column(nullable = false)
     private Long jobId;
 
+    @Column(nullable = false)
+    private String description;
+
+    @Column
+    private String certification;
+
     @Builder
     private Apply(final Boolean result, final Long memberId, final Long dormitoryId, final Long jobId) {
         this.result = result;

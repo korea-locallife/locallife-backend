@@ -35,20 +35,19 @@ public class Member {
     private String email;
 
     @Column(nullable = false)
-    private String age;
+    private String gender;
 
     @Column(nullable = false)
-    private String gender;
+    private String birthday;
 
     @Builder
     private Member(final String memberId, final String password, final String name, final String phone,
-                  final String email, final String age, final String gender) {
+                  final String email, final String gender) {
         this.memberId = memberId;
         this.password = password;
         this.name = name;
         this.phone = phone;
         this.email = email;
-        this.age = age;
         this.gender = gender;
     }
 }
