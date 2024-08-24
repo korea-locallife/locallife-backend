@@ -23,9 +23,9 @@ public class DormitoryController {
         return ResponseEntity.ok(dormitoryService.getDormitoryAll());
     }
 
-    @GetMapping("/{local}")
-    public ResponseEntity<List<Dormitory>> getDormitoryInfo(@PathVariable String local) {
-        return ResponseEntity.ok(dormitoryService.getDormitoryInfo(local));
+    @GetMapping("/{category}")
+    public ResponseEntity<List<Dormitory>> getDormitoryInfo(@PathVariable String category) {
+        return ResponseEntity.ok(dormitoryService.getDormitoryInfo(category));
     }
 
 }
