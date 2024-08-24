@@ -27,10 +27,19 @@ public class DormitoryJob {
     @Column(nullable = false)
     private Long distance;
 
+    @Column(nullable = false)
+    private Long timeByCar;
+
+    @Column(nullable = false)
+    private Long timeByTransport;
+
     @Builder
-    private DormitoryJob(final Long dormitoryId, final Long jobId, final Long distance) {
+    private DormitoryJob(final Long dormitoryId, final Long jobId, final Long distance, final Long timeByCar,
+                        final Long timeByTransport) {
         this.dormitoryId = dormitoryId;
         this.jobId = jobId;
         this.distance = distance;
+        this.timeByCar = timeByCar;
+        this.timeByTransport = timeByTransport;
     }
 }
