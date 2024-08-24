@@ -27,10 +27,19 @@ public class Dormitory {
     @Column(nullable = false)
     private String count;
 
+    @Column(nullable = false)
+    private String category;
+
+    @Column(nullable = false)
+    private String local;
+
     @Builder
-    private Dormitory(final String name, final String description, final String count) {
+    private Dormitory(final String name, final String description, final String count, final String category,
+                     final String local) {
         this.name = name;
         this.description = description;
         this.count = count;
+        this.category = category;
+        this.local = local;
     }
 }

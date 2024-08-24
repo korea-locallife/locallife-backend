@@ -25,6 +25,9 @@ public class Job {
     private String description;
 
     @Column(nullable = false)
+    private String category;
+
+    @Column(nullable = false)
     private String local;
 
     @Column(nullable = false)
@@ -43,11 +46,12 @@ public class Job {
     private String scheduleImageUrl;
 
     @Builder
-    private Job(final String name, final String description, final String local, final String count,
-               final String imageUrl, final String title, final String writer,
-               final String scheduleImageUrl) {
+    private Job(final String name, final String description, final String category, final String local,
+               final String count, final String imageUrl, final String title,
+               final String writer, final String scheduleImageUrl) {
         this.name = name;
         this.description = description;
+        this.category = category;
         this.local = local;
         this.count = count;
         this.imageUrl = imageUrl;
