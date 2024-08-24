@@ -42,12 +42,13 @@ public class Member {
 
     @Builder
     private Member(final String memberId, final String password, final String name, final String phone,
-                  final String email, final String gender) {
+                  final String email, final String gender, final String birthday) {
         this.memberId = memberId;
         this.password = password;
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.gender = gender;
+        this.birthday = birthday;
     }
 }

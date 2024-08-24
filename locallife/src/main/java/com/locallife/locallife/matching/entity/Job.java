@@ -43,10 +43,16 @@ public class Job {
     private String scheduleImageUrl;
 
     @Builder
-    private Job(final String name, final String description, final String local, final String count) {
+    private Job(final String name, final String description, final String local, final String count,
+               final String imageUrl, final String title, final String writer,
+               final String scheduleImageUrl) {
         this.name = name;
         this.description = description;
         this.local = local;
         this.count = count;
+        this.imageUrl = imageUrl;
+        this.title = title;
+        this.writer = writer;
+        this.scheduleImageUrl = scheduleImageUrl;
     }
 }

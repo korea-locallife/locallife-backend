@@ -37,10 +37,13 @@ public class Apply {
     private String certification;
 
     @Builder
-    private Apply(final Boolean result, final Long memberId, final Long dormitoryId, final Long jobId) {
+    private Apply(final Boolean result, final Long memberId, final Long dormitoryId, final Long jobId,
+                 final String description, final String certification) {
         this.result = result;
         this.memberId = memberId;
         this.dormitoryId = dormitoryId;
         this.jobId = jobId;
+        this.description = description;
+        this.certification = certification;
     }
 }
