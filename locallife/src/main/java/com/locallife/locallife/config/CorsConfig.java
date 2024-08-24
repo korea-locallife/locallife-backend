@@ -1,0 +1,30 @@
+package com.locallife.locallife.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class CorsConfig implements WebMvcConfigurer {
+
+    @Value(value = "https://life.pnu.app/")
+    private String[] allowedOrigins;
+
+    @Value(value = "GET, POST")
+    private String[] allowedMethods;
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins(allowedOrigins)
+                .allowedMethods(
+                        HttpMethod.GET.name(),
+                        HttpMethod.HEAD.name(),
+                        HttpMethod.POST.name())
+                .allowedHeaders("Origin", "Content-Type", "Accept", "Authorization")
+                .allowCredentials(true)
+                .maxAge(3600);
+    }
+}
