@@ -16,4 +16,8 @@ public class DormitoryService {
     public List<Dormitory> getDormitoryAll() {
         return dormitoryRepository.findAll();
     }
+
+    public List<Dormitory> getDormitoryInfo(final String local) {
+        return dormitoryRepository.findAllByLocal(local);
+    }
 }

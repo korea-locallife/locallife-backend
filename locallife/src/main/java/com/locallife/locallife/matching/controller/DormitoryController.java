@@ -7,19 +7,25 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/matching")
+@RequestMapping("/matching/dormitories")
 public class DormitoryController {
     private final DormitoryService dormitoryService;
 
-    @GetMapping("/dormitories")
+    @GetMapping
     public ResponseEntity<List<Dormitory>> getDormitoryAll() {
         return ResponseEntity.ok(dormitoryService.getDormitoryAll());
+    }
+
+    @GetMapping("/{local}")
+    public ResponseEntity<List<Dormitory>> getDormitoryInfo(@PathVariable String local) {
+        return ResponseEntity.ok(dormitoryService.getDormitoryInfo(local));
     }
 
 }
