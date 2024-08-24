@@ -12,7 +12,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Value(value = "https://life.pnu.app/")
     private String[] allowedOrigins;
 
-    @Value(value = "GET, POST")
+    @Value(value = "GET, POST, PUT, DELETE, PATCH, OPTION")
     private String[] allowedMethods;
 
     @Override
@@ -22,7 +22,11 @@ public class CorsConfig implements WebMvcConfigurer {
                 .allowedMethods(
                         HttpMethod.GET.name(),
                         HttpMethod.HEAD.name(),
-                        HttpMethod.POST.name())
+                        HttpMethod.POST.name(),
+                        HttpMethod.OPTIONS.name(),
+                        HttpMethod.PUT.name(),
+                        HttpMethod.PATCH.name(),
+                        HttpMethod.DELETE.name())
                 .allowedHeaders("Origin", "Content-Type", "Accept", "Authorization")
                 .allowCredentials(true)
                 .maxAge(3600);
