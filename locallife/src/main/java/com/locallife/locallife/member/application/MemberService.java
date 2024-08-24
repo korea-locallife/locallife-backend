@@ -34,4 +34,8 @@ public class MemberService {
                 .build());
     }
 
+    public Member getApplyResult(final Long memberId) {
+        return memberRepository.findById(memberId).orElseThrow();
+    }
+
 }
