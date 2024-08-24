@@ -30,4 +30,8 @@ public class InfraService {
     public List<Review> getReviewAll() {
         return reviewRepository.findAll();
     }
+
+    public List<Review> getReviewInfo(final String local) {
+        return reviewRepository.findAllByLocal(local);
+    }
 }

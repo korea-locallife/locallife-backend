@@ -34,4 +34,9 @@ public class InfraController {
     public ResponseEntity<List<Review>> getReviewAll() {
         return ResponseEntity.ok(infraService.getReviewAll());
     }
+
+    @GetMapping("/review/{local}")
+    public ResponseEntity<List<Review>> getReviewInfo(@PathVariable String local) {
+        return ResponseEntity.ok(infraService.getReviewInfo(local));
+    }
 }
