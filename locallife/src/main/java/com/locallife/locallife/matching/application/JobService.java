@@ -25,4 +25,9 @@ public class JobService {
         List<DormitoryJob> dormitoryJobs = dormitoryJobRepository.findAllByJobIdIn(jobIds);
         return JobResponse.of(jobs, dormitoryJobs);
     }
+
+    public Job getJobInfoDetail(final Long jobId) {
+        Job job = jobRepository.findById(jobId).orElseThrow();
+        return job;
+    }
 }

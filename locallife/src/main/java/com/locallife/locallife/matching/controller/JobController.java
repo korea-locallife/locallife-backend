@@ -2,6 +2,7 @@ package com.locallife.locallife.matching.controller;
 
 import com.locallife.locallife.matching.application.JobService;
 import com.locallife.locallife.matching.application.dto.response.JobResponse;
+import com.locallife.locallife.matching.entity.Job;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,5 +22,10 @@ public class JobController {
     @GetMapping("/distance/{local}")
     public ResponseEntity<List<JobResponse>> getJobInfo(@PathVariable String local) {
         return ResponseEntity.ok(jobService.getJobInfo(local));
+    }
+
+    @GetMapping("/{jobId}")
+    public ResponseEntity<Job> getJobInfoDetail(@PathVariable Long jobId) {
+        return ResponseEntity.ok(jobService.getJobInfoDetail(jobId));
     }
 }
