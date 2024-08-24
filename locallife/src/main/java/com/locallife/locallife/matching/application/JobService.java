@@ -27,7 +27,6 @@ public class JobService {
     }
 
     public Job getJobInfoDetail(final Long jobId) {
-        Job job = jobRepository.findById(jobId).orElseThrow();
-        return job;
+        return jobRepository.findById(jobId).orElseThrow();
     }
 }
