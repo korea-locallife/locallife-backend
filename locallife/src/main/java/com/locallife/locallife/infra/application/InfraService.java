@@ -1,8 +1,10 @@
 package com.locallife.locallife.infra.application;
 
 import com.locallife.locallife.infra.entity.Facility;
+import com.locallife.locallife.infra.entity.Review;
 import com.locallife.locallife.infra.entity.Transport;
 import com.locallife.locallife.infra.entity.dao.FacilityRepository;
+import com.locallife.locallife.infra.entity.dao.ReviewRepository;
 import com.locallife.locallife.infra.entity.dao.TransportRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class InfraService {
     private final FacilityRepository facilityRepository;
     private final TransportRepository transportRepository;
+    private final ReviewRepository reviewRepository;
 
     public List<Facility> getFacilityInfo(final String local) {
         return facilityRepository.findAllByLocal(local);
@@ -22,5 +25,9 @@ public class InfraService {
 
     public List<Transport> getTransportInfo(final String local) {
         return transportRepository.findAllByLocal(local);
+    }
+
+    public List<Review> getReviewAll() {
+        return reviewRepository.findAll();
     }
 }

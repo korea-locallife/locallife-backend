@@ -2,6 +2,7 @@ package com.locallife.locallife.infra.controller;
 
 import com.locallife.locallife.infra.application.InfraService;
 import com.locallife.locallife.infra.entity.Facility;
+import com.locallife.locallife.infra.entity.Review;
 import com.locallife.locallife.infra.entity.Transport;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -27,5 +28,10 @@ public class InfraController {
     @GetMapping("/transport/{local}")
     public ResponseEntity<List<Transport>> getTransportInfo(@PathVariable String local) {
         return ResponseEntity.ok(infraService.getTransportInfo(local));
+    }
+
+    @GetMapping("/review")
+    public ResponseEntity<List<Review>> getReviewAll() {
+        return ResponseEntity.ok(infraService.getReviewAll());
     }
 }
