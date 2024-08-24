@@ -40,9 +40,25 @@ public class Member {
     @Column(nullable = false)
     private String birthday;
 
+    @Column
+    private Boolean result;
+
+    @Column
+    private Long dormitoryId;
+
+    @Column
+    private Long jobId;
+
+    @Column
+    private String portfolio;
+
+    @Column
+    private String certification;
+
     @Builder
     private Member(final String loginId, final String password, final String name, final String phone,
-                  final String email, final String gender, final String birthday) {
+                  final String email, final String gender, final String birthday,
+                  final Boolean result, final String portfolio, final String certification) {
         this.loginId = loginId;
         this.password = password;
         this.name = name;
@@ -50,5 +66,8 @@ public class Member {
         this.email = email;
         this.gender = gender;
         this.birthday = birthday;
+        this.result = result;
+        this.portfolio = portfolio;
+        this.certification = certification;
     }
 }
