@@ -8,6 +8,7 @@ import lombok.Builder;
 
 @Builder
 public record JobResponse(
+        Long jobId,
         String category,
         String local,
         String description,
@@ -18,6 +19,7 @@ public record JobResponse(
     public static List<JobResponse> of(final List<Job> jobs, final List<DormitoryJob> dormitoryJobs) {
         return IntStream.range(0, jobs.size())
                 .mapToObj(i -> JobResponse.builder()
+                        .jobId(jobs.get(i).getId())
                         .category(jobs.get(i).getCategory())
                         .local(jobs.get(i).getLocal())
                         .description(jobs.get(i).getDescription())
