@@ -15,7 +15,7 @@ public class Review {
     private Long id;
 
     @Column(nullable = false)
-    private Long applyId;
+    private Long memberId;
 
     @Column(nullable = false)
     private String name;
@@ -27,8 +27,8 @@ public class Review {
     private String local;
 
     @Builder
-    private Review(final Long applyId, final String name, final String description, final String local) {
-        this.applyId = applyId;
+    private Review(final Long memberId, final String name, final String description, final String local) {
+        this.memberId = memberId;
         this.name = name;
         this.description = description;
         this.local = local;

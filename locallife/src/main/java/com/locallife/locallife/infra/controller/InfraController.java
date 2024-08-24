@@ -44,9 +44,9 @@ public class InfraController {
         return ResponseEntity.ok(infraService.getReviewInfo(local));
     }
 
-    @PostMapping("/review/{applyId}")
-    public ResponseEntity<Void> createReview(@RequestBody ReviewRequest reviewRequest, @PathVariable Long applyId) {
-        infraService.createReview(reviewRequest, applyId);
+    @PostMapping("/review/{memberId}")
+    public ResponseEntity<Void> createReview(@RequestBody ReviewRequest reviewRequest, @PathVariable Long memberId) {
+        infraService.createReview(reviewRequest, memberId);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

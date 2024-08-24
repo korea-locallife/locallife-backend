@@ -40,6 +40,21 @@ public class Member {
     @Column(nullable = false)
     private String birthday;
 
+    @Column
+    private Boolean result;
+
+    @Column
+    private Long dormitoryId;
+
+    @Column
+    private Long jobId;
+
+    @Column
+    private String description;
+
+    @Column
+    private String certification;
+
     @Builder
     private Member(final String loginId, final String password, final String name, final String phone,
                   final String email, final String gender, final String birthday) {
